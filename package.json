@@ -1,0 +1,10 @@
+{
+  "name": "home-automator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "got": "^7.1.0",
+    "request": "^2.83.0"
+  }
+}
