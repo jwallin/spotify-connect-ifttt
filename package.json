@@ -1,0 +1,11 @@
+{
+  "name": "home-automator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Johan Wallin <j.e.wallin@gmail.comn>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
