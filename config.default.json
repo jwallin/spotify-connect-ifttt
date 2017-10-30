@@ -1,0 +1,18 @@
+{
+    "refreshToken": "YOUR_REFRESH_TOKEN_WITH_SCOPES",
+    "clientId": "CLIENT_ID",
+    "clientSecret": "CLIENT_SECRET",
+    "secret": "SHARED_SECRET",
+    "devices": [
+        {
+            "id": "1",
+            "name": "Device 1",
+            "keys": ["living room", "speakers"]
+        },
+        {
+            "id": "2",
+            "name": "Device 2",
+            "keys": ["bathroom", "my bathroom"]
+        }
+    ]
+}
