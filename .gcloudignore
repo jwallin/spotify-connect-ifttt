@@ -19,3 +19,5 @@ config.default.json
 .editorconfig
 yarn.lock
 test.js
+.eslintrc.json
+package-lock.json

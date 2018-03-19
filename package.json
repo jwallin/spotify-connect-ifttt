@@ -6,10 +6,16 @@
   "license": "MIT",
   "description": "A Google Cloud Function application for controlling Spotify connect devices via IFTTT (using Webhooks)",
   "dependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb": "^16.1.0",
     "express": "^4.16.2",
     "opn": "^5.2.0",
     "querystring": "^0.2.0",
     "randomstring": "^1.1.5",
     "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
   }
 }
