@@ -5,6 +5,10 @@
   "author": "Johan Wallin <j.e.wallin@gmail.comn>",
   "license": "MIT",
   "description": "A Google Cloud Function application for controlling Spotify connect devices via IFTTT (using Webhooks)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwallin/spotify-connect-ifttt.git"
+  },
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js ."
   },

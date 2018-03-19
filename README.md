@@ -40,7 +40,8 @@ Set up a [new WebHook trigger](https://ifttt.com/create) with the URL displayed 
 
 Select method `POST`, Content-Type to `application/json` and set body to:
 ```json
-{ "device": "{{TextField}}",
+{
+  "device": "{{TextField}}",
   "secret": "{YOUR-SECRET-IN-CONFIG.JSON}"
 }
 ```
