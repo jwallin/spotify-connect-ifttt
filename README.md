@@ -1,4 +1,4 @@
-# Webhook support for Spotify Connect (for IFTTT etc)
+# IFTTT support for Spotify Connect (using Webhook)
 Transfer playback between your devices. To be used with Google Assistant, Flic button etc.
 
 This example uses Google Cloud Functions, but can be deployed elsewhere too.
@@ -33,7 +33,6 @@ To deploy to Google Cloud Functions run
 ```
 gcloud beta functions deploy playOnDevice --trigger-http
 ```
-
 
 ## Set up IFTTT WebHook trigger.
 Set up a WebHook trigger with the URL displayed after deploy, something in the form of

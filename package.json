@@ -1,9 +1,10 @@
 {
-  "name": "spotify-connect-",
+  "name": "spotify-connect-ifttt",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Johan Wallin <j.e.wallin@gmail.comn>",
   "license": "MIT",
+  "description": "A Google Cloud Function application for controlling Spotify connect devices via IFTTT (using Webhooks)",
   "dependencies": {
     "express": "^4.16.2",
     "opn": "^5.2.0",
