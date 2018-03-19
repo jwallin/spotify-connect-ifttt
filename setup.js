@@ -11,6 +11,7 @@
 const AUTH_CONFIG_PATH = './config.json';
 
 const config = require(AUTH_CONFIG_PATH);
+const authHeader = require('./lib/authorization.js');
 
 const fs = require('fs');
 const request = require('request');
@@ -48,7 +49,7 @@ function fetchToken(code, oldConf) {
   return new Promise((resolve, reject) => {
     const authOptions = {
       url: `${ACCOUNTS_URL}/api/token`,
-      headers: { Authorization: `Basic ${new Buffer(`${config.CLIENT_ID}:${config.CLIENT_SECRET}`).toString('base64')}` },
+      headers: authHeader(oldConf.CLIENT_ID, oldConf.CLIENT_SECRET),
       form: {
         code,
         redirect_uri: redirectUri,

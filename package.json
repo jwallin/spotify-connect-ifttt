@@ -5,6 +5,9 @@
   "author": "Johan Wallin <j.e.wallin@gmail.comn>",
   "license": "MIT",
   "description": "A Google Cloud Function application for controlling Spotify connect devices via IFTTT (using Webhooks)",
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js ."
+  },
   "dependencies": {
     "eslint": "^4.19.0",
     "eslint-config-airbnb": "^16.1.0",
