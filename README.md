@@ -35,7 +35,7 @@ gcloud beta functions deploy playOnDevice --trigger-http
 ```
 
 ## Set up IFTTT WebHook trigger.
-Set up a WebHook trigger with the URL displayed after deploy, something in the form of
+Set up a [new WebHook trigger](https://ifttt.com/create) with the URL displayed after deploy, something in the form of
 `https://{YOUR-REGION}-{YOUR-PROJECT-ID}.cloudfunctions.net/playOnDevice`
 
 Select method `POST`, Content-Type to `application/json` and set body to:
