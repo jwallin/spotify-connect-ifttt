@@ -1,11 +1,14 @@
 {
-  "name": "home-automator",
+  "name": "spotify-connect-",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Johan Wallin <j.e.wallin@gmail.comn>",
   "license": "MIT",
-  "private": true,
   "dependencies": {
+    "express": "^4.16.2",
+    "opn": "^5.2.0",
+    "querystring": "^0.2.0",
+    "randomstring": "^1.1.5",
     "request": "^2.83.0"
   }
 }

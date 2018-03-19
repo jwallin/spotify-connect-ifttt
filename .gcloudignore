@@ -14,3 +14,8 @@
 .gitignore
 
 node_modules
+setup.js
+config.default.json
+.editorconfig
+yarn.lock
+test.js
