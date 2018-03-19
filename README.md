@@ -14,7 +14,7 @@ npm install
 ```
 1. Create an application on [Spotify for Developers](https://beta.developer.spotify.com/dashboard/applications).
 2. Add redirect uri `http://localhost:8888/callback`
-3. Create a `config.json` file (based on config.default.json) and update `CLIENT_ID` and `CLIENT_SECRET` from the Spotify application you just created
+3. Create a `config.json` file (based on `config.default.json`) and update `CLIENT_ID` and `CLIENT_SECRET` from the Spotify application you just created
 4. Start configuration by running
 ```sh
 node setup.js
