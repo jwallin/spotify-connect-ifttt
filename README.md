@@ -1,5 +1,5 @@
 # IFTTT support for Spotify Connect (using Webhook)
-Transfer playback between your devices. To be used with Google Assistant, Flic button etc.
+Transfer playback between your devices using [Spotify Connect](https://beta.developer.spotify.com/documentation/web-api/reference/player/). To be used with Google Assistant, Flic button etc.
 
 This example uses Google Cloud Functions, but can be deployed elsewhere too.
 

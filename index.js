@@ -1,5 +1,6 @@
 const config = require('./config.json');
 const playOnDevice = require('./lib/playOnDevice');
+const skip = require('./lib/skip.js');
 
 function isAuthenticated(req, res) {
   if (req.body.secret && req.body.secret === config.SECRET) {
@@ -25,4 +26,11 @@ exports.playOnDevice = function p(req, res) {
       console.error(body);
       res.end();
     });
+};
+
+exports.skipNext = function skipNext(req, res) {
+  // Ensure authentication
+  if (!isAuthenticated(req, res)) return;
+
+  skip.skipNext();
 };
