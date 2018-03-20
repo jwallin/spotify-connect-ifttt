@@ -39,3 +39,15 @@ exports.skipNext = function skipNext(req, res) {
       res.end();
     });
 };
+
+exports.skipPrevious = function skipPrevious(req, res) {
+  // Ensure authentication
+  if (!isAuthenticated(req, res)) return;
+
+  skip.skipPrevious()
+    .then(res.end())
+    .catch((body) => {
+      console.error(body);
+      res.end();
+    });
+};
