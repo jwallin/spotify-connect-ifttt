@@ -4,7 +4,7 @@ Transfer playback between your devices using [Spotify Connect](https://beta.deve
 This example uses Google Cloud Functions, but can be deployed elsewhere too.
 
 ## Enable Google Cloud Functions
-Install and initialize as described on https://cloud.google.com/functions/docs/tutorials/http
+Install and initialize Google Cloud Functions as described on https://cloud.google.com/functions/docs/tutorials/http
 
 ## Configuration
 
@@ -12,14 +12,14 @@ Install and initialize as described on https://cloud.google.com/functions/docs/t
 ```sh
 npm install
 ```
-1. Create an application on [Spotify for Developers](https://beta.developer.spotify.com/dashboard/applications).
-2. Add redirect uri `http://localhost:8888/callback`
-3. Create a `config.json` file (based on `config.default.json`) and update `CLIENT_ID` and `CLIENT_SECRET` from the Spotify application you just created
-4. Start configuration by running
+2. Create an application on [Spotify for Developers](https://beta.developer.spotify.com/dashboard/applications).
+3. Add redirect uri `http://localhost:8888/callback`
+4. Create a `config.json` file (based on `config.default.json`) and update `CLIENT_ID` and `CLIENT_SECRET` from the Spotify application you just created
+5. Start configuration by running
 ```sh
 node setup.js
 ```
-5. (Optional) Add keywords to your devices in `config.js` (lowercase)
+6. (Optional) Add keywords to your devices in `config.json` (lowercase)
 
 ## Testing
 Test your configuration by running
@@ -54,6 +54,7 @@ Activate playback on given device
 
 #### Parameters
 `secret` Your shared secret for authentication
+
 `device` The name (or one of the keywords) of the device to move playback to
 
 #
