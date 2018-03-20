@@ -30,8 +30,8 @@ This should start playback to the first device in your list. It can also take an
 
 ## Deploy
 To deploy to Google Cloud Functions run
-```
-gcloud beta functions deploy playOnDevice --trigger-http
+```sh
+./deploy.sh
 ```
 
 ## Set up IFTTT WebHook trigger.
