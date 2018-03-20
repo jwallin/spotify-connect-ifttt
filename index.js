@@ -32,5 +32,10 @@ exports.skipNext = function skipNext(req, res) {
   // Ensure authentication
   if (!isAuthenticated(req, res)) return;
 
-  skip.skipNext();
+  skip.skipNext()
+    .then(res.end())
+    .catch((body) => {
+      console.error(body);
+      res.end();
+    });
 };
