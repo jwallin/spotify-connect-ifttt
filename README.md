@@ -45,3 +45,27 @@ Select method `POST`, Content-Type to `application/json` and set body to:
   "secret": "{YOUR-SECRET-IN-CONFIG.JSON}"
 }
 ```
+
+## API
+All calls should be made with POST method.
+
+### `/playOnDevice`
+Activate playback on given device
+
+#### Parameters
+`secret` Your shared secret for authentication
+`device` The name (or one of the keywords) of the device to move playback to
+
+#
+
+### `/skipNext`
+Skip to next track
+#### Parameters
+`secret` Your shared secret for authentication
+
+#
+
+### `/skipPrevious`
+Skip to previous track
+#### Parameters
+`secret` Your shared secret for authentication
