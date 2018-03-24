@@ -11,55 +11,28 @@ function isAuthenticated(req, res) {
   return false;
 }
 
-exports.playOnDevice = function p(req, res) {
-  let deviceName;
+function handleRequest(handler, req, res) {
   // Ensure authentication
   if (!isAuthenticated(req, res)) return;
+
+  handler()
+    .then(res.end())
+    .catch((body) => {
+      console.error(body);
+      res.end();
+    });
+}
+
+function play(req) {
+  let deviceName;
   if (req.get('content-type') === 'application/json') {
     deviceName = req.body.device;
   }
-
   // Start playback on device
-  playOnDevice(deviceName)
-    .then(res.end())
-    .catch((body) => {
-      console.error(body);
-      res.end();
-    });
-};
+  playOnDevice(deviceName);
+}
 
-exports.skipNext = function skipNext(req, res) {
-  // Ensure authentication
-  if (!isAuthenticated(req, res)) return;
-
-  player.skipNext()
-    .then(res.end())
-    .catch((body) => {
-      console.error(body);
-      res.end();
-    });
-};
-
-exports.skipPrevious = function skipPrevious(req, res) {
-  // Ensure authentication
-  if (!isAuthenticated(req, res)) return;
-
-  player.skipPrevious()
-    .then(res.end())
-    .catch((body) => {
-      console.error(body);
-      res.end();
-    });
-};
-
-exports.pause = function pause(req, res) {
-  // Ensure authentication
-  if (!isAuthenticated(req, res)) return;
-
-  player.skipPrevious()
-    .then(res.end())
-    .catch((body) => {
-      console.error(body);
-      res.end();
-    });
-};
+exports.skipNext = (req, res) => handleRequest(player.skipNext, req, res);
+exports.skipPrevious = (req, res) => handleRequest(player.skipPrevious, req, res);
+exports.pause = (req, res) => handleRequest(player.pause, req, res);
+exports.playOnDevice = (req, res) => handleRequest(play.bind(this, req), req, res);
