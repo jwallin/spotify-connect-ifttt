@@ -21,12 +21,15 @@ node setup.js
 ```
 6. (Optional) Add keywords to your devices in `config.json` (lowercase)
 
-## Testing
+## Test
 Test your configuration by running
 ```sh
 node test.js
 ````
-This should start playback to the first device in your list. It can also take an argument of a device: `node test.js "MySpeaker"`
+This should start playback to the first device in your list. It can also take an argument of a device:
+```sh
+node test.js "MySpeaker"
+```
 
 ## Deploy
 To deploy to Google Cloud Functions run
@@ -34,7 +37,7 @@ To deploy to Google Cloud Functions run
 ./deploy.sh
 ```
 
-## Set up IFTTT WebHook trigger.
+## Set up IFTTT WebHook trigger
 Set up a [new WebHook trigger](https://ifttt.com/create) with the URL displayed after deploy, something in the form of
 `https://{YOUR-REGION}-{YOUR-PROJECT-ID}.cloudfunctions.net/playOnDevice`
 
@@ -68,5 +71,12 @@ Skip to next track
 
 ### `/skipPrevious`
 Skip to previous track
+#### Parameters
+`secret` Your shared secret for authentication
+
+#
+
+### `/pause`
+Pause playback
 #### Parameters
 `secret` Your shared secret for authentication

@@ -1,6 +1,6 @@
 const config = require('./config.json');
 const playOnDevice = require('./lib/playOnDevice');
-const skip = require('./lib/skip.js');
+const player = require('./lib/player.js');
 
 function isAuthenticated(req, res) {
   if (req.body.secret && req.body.secret === config.SECRET) {
@@ -32,7 +32,7 @@ exports.skipNext = function skipNext(req, res) {
   // Ensure authentication
   if (!isAuthenticated(req, res)) return;
 
-  skip.skipNext()
+  player.skipNext()
     .then(res.end())
     .catch((body) => {
       console.error(body);
@@ -44,7 +44,19 @@ exports.skipPrevious = function skipPrevious(req, res) {
   // Ensure authentication
   if (!isAuthenticated(req, res)) return;
 
-  skip.skipPrevious()
+  player.skipPrevious()
+    .then(res.end())
+    .catch((body) => {
+      console.error(body);
+      res.end();
+    });
+};
+
+exports.pause = function pause(req, res) {
+  // Ensure authentication
+  if (!isAuthenticated(req, res)) return;
+
+  player.skipPrevious()
     .then(res.end())
     .catch((body) => {
       console.error(body);
