@@ -1,5 +1,4 @@
 const config = require('./config.json');
-const playOnDevice = require('./lib/playOnDevice');
 const player = require('./lib/player.js');
 
 function isAuthenticated(req, res) {
@@ -23,16 +22,16 @@ function handleRequest(handler, req, res) {
     });
 }
 
-function play(req) {
+function playOnDevice(req) {
   let deviceName;
   if (req.get('content-type') === 'application/json') {
     deviceName = req.body.device;
   }
   // Start playback on device
-  playOnDevice(deviceName);
+  player.playOnDevice(deviceName);
 }
 
 exports.skipNext = (req, res) => handleRequest(player.skipNext, req, res);
 exports.skipPrevious = (req, res) => handleRequest(player.skipPrevious, req, res);
 exports.pause = (req, res) => handleRequest(player.pause, req, res);
-exports.playOnDevice = (req, res) => handleRequest(play.bind(this, req), req, res);
+exports.playOnDevice = (req, res) => handleRequest(playOnDevice.bind(this, req), req, res);
