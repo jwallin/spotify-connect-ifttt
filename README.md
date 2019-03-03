@@ -3,18 +3,25 @@ Transfer playback between your devices using [Spotify Connect](https://beta.deve
 
 This example uses Google Cloud Functions, but can be deployed elsewhere too.
 
-## Enable Google Cloud Functions
-Install and initialize Google Cloud Functions as described on https://cloud.google.com/functions/docs/tutorials/http
+## Configure Google Cloud Functions
+1. Install and initialize Google Cloud Functions as described on https://cloud.google.com/functions/docs/tutorials/http
+2. Authenticate Google Cloud by running
+```sh
+gcloud auth login
+```
+3. Configure Google Cloud project (if authentication didn't set you up with the correct one).
+```sh
+gcloud config set project PROJECT_ID
+```
 
 ## Configuration
-
 1. Install dependencies with
 ```sh
 npm install
 ```
 2. Create an application on [Spotify for Developers](https://beta.developer.spotify.com/dashboard/applications).
 3. Add redirect uri `http://localhost:8888/callback`
-4. Create a `config.json` file (based on `config.default.json`) and update `CLIENT_ID` and `CLIENT_SECRET` from the Spotify application you just created
+4. Create a `config.json` file (based on `config.default.json`) and update `CLIENT_ID` and `CLIENT_SECRET` from the Spotify application you just created.
 5. Start configuration by running
 ```sh
 node setup.js
@@ -24,17 +31,17 @@ node setup.js
 ## Test
 Test your configuration by running
 ```sh
-node test.js
+npm run test
 ````
 This should start playback to the first device in your list. It can also take an argument of a device:
 ```sh
-node test.js "MySpeaker"
+npm run test -- "MySpeaker"
 ```
 
 ## Deploy
 To deploy to Google Cloud Functions run
 ```sh
-./deploy.sh
+npm run deploy
 ```
 
 ## Set up IFTTT WebHook trigger
