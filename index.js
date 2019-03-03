@@ -28,7 +28,7 @@ function playOnDevice(req) {
     deviceName = req.body.device;
   }
   // Start playback on device
-  player.playOnDevice(deviceName);
+  return player.playOnDevice(deviceName);
 }
 
 exports.skipNext = (req, res) => handleRequest(player.skipNext, req, res);
