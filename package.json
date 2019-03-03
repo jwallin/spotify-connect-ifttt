@@ -19,7 +19,7 @@
     "opn": "^5.2.0",
     "querystring": "^0.2.0",
     "randomstring": "^1.1.5",
-    "request": "^2.83.0"
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
