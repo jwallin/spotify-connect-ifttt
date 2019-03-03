@@ -10,7 +10,9 @@
     "url": "git+https://github.com/jwallin/spotify-connect-ifttt.git"
   },
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js ."
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "test": "node test.js",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "eslint": "^4.19.0",
