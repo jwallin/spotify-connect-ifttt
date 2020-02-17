@@ -36,10 +36,12 @@ function playOnDevice(req) {
 
 function setVolume(req) {
   let volume;
+  let deviceName;
   if (req.get('content-type') === 'application/json') {
     volume = req.body.volume;
+    deviceName = req.body.device;
   }
-  return player.setVolume(volume);
+  return player.setVolume(volume, deviceName);
 }
 
 exports.skipNext = (req, res) => handleRequest(player.skipNext, req, res);
