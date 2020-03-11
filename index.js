@@ -27,7 +27,7 @@ function playOnDevice(req) {
   let play;
   if (req.get('content-type') === 'application/json') {
     deviceName = req.body.device;
-    play = (req.body.play == "true" || req.body.play == true);
+    play = (req.body.play === 'true' || req.body.play === true);
   }
 
   // Start playback on device
@@ -38,7 +38,7 @@ function setVolume(req) {
   let volume;
   let deviceName;
   if (req.get('content-type') === 'application/json') {
-    volume = req.body.volume;
+    ({ volume } = req.body);
     deviceName = req.body.device;
   }
   return player.setVolume(volume, deviceName);
