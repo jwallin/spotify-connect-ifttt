@@ -6,6 +6,7 @@ function isAuthenticated(req, res) {
     return true;
   }
   console.error('Authentication failed for client');
+  res(403).send('Authentication failed for client');
   res.end();
   return false;
 }
