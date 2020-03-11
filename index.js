@@ -35,12 +35,19 @@ function playOnDevice(req) {
 }
 
 function setVolume(req) {
-  let volume;
-  let device;
-  if (req.get('content-type') === 'application/json') {
-    ({ volume, device } = req.body);
+  if (!req.get('content-type') === 'application/json') {
+    throw new Error('Content-type must be JSON');
   }
+  const { volume, device } = req.body;
   return player.setVolume(volume, device);
+}
+
+function adjustVolume(req) {
+  if (!req.get('content-type') === 'application/json') {
+    throw new Error('Content-type must be JSON');
+  }
+  const { volumeChange } = req.body;
+  return player.adjustVolume(volumeChange);
 }
 
 exports.skipNext = (req, res) => handleRequest(player.skipNext, req, res);
@@ -49,3 +56,4 @@ exports.pause = (req, res) => handleRequest(player.pause, req, res);
 exports.play = (req, res) => handleRequest(player.play, req, res);
 exports.playOnDevice = (req, res) => handleRequest(playOnDevice.bind(this, req), req, res);
 exports.setVolume = (req, res) => handleRequest(setVolume.bind(this, req), req, res);
+exports.adjustVolume = (req, res) => handleRequest(adjustVolume.bind(this, req), req, res);
