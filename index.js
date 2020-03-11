@@ -23,15 +23,28 @@ function handleRequest(handler, req, res) {
 }
 
 function playOnDevice(req) {
-  let deviceName;
+  let device;
+  let play;
   if (req.get('content-type') === 'application/json') {
-    deviceName = req.body.device;
+    ({ device, play } = req.body);
   }
+
   // Start playback on device
-  return player.playOnDevice(deviceName);
+  return player.playOnDevice(device, play);
+}
+
+function setVolume(req) {
+  let volume;
+  let device;
+  if (req.get('content-type') === 'application/json') {
+    ({ volume, device } = req.body);
+  }
+  return player.setVolume(volume, device);
 }
 
 exports.skipNext = (req, res) => handleRequest(player.skipNext, req, res);
 exports.skipPrevious = (req, res) => handleRequest(player.skipPrevious, req, res);
 exports.pause = (req, res) => handleRequest(player.pause, req, res);
+exports.play = (req, res) => handleRequest(player.play, req, res);
 exports.playOnDevice = (req, res) => handleRequest(playOnDevice.bind(this, req), req, res);
+exports.setVolume = (req, res) => handleRequest(setVolume.bind(this, req), req, res);
