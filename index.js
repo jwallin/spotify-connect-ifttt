@@ -6,8 +6,7 @@ function isAuthenticated(req, res) {
     return true;
   }
   console.error('Authentication failed for client');
-  res(403).send('Authentication failed for client');
-  res.end();
+  res.status(401).end();
   return false;
 }
 
@@ -19,7 +18,7 @@ function handleRequest(handler, req, res) {
     .then(res.end())
     .catch((body) => {
       console.error(body);
-      res.end();
+      res.status(500).end();
     });
 }
 
