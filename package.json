@@ -15,7 +15,7 @@
     "deploy": "./deploy.sh"
   },
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "opn": "^5.2.0",
     "querystring": "^0.2.0",
     "randomstring": "^1.1.5",
